@@ -20,6 +20,8 @@ It takes data from Instagram and uses two JSON files—following and follower—
 1. Request your Instagram data via Instagram’s settings (Settings → Security → Download Data).
 2. Install pandas:
    `pip install pandas`
+   or
+   `python -m pip install pandas`
 
 ## Usage
 
