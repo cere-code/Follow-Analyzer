@@ -6,22 +6,19 @@ It takes data from Instagram and uses two JSON files—following and follower—
 
 ## Features
 
-* Compares Instagram following vs. followers lists
-* Identifies users who don't follow back
+-   Compares Instagram following vs. followers lists
+-   Identifies users who do and don't follow back
 
 ## Prerequisites
 
-* pandas
-* time
-* Instagram data (requested directly from Instagram using their data export tool)
+-   pandas
+-   time
+-   Instagram data (requested directly from Instagram using their data export tool)
 
 ## Installation
 
-1. Request your Instagram data via Instagram’s settings (Settings → Security → Download Data).
-2. Install pandas:
-   `pip install pandas`
-   or
-   `python -m pip install pandas`
+1.  Request your Instagram data via Instagram’s settings (Settings → Security → Download Data).
+2.  Install pandas: `pip install pandas` or `python -m pip install pandas`
 
 ## Usage
 

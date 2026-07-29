@@ -34,14 +34,47 @@ for person in ferdata:
 follower_df = pd.DataFrame(fer_rows)
 # print(follower_df.to_string())
 
-compared_df = following_df[
+found_non = following_df[
     ~ following_df['username'].isin(follower_df['username'])
+]
+found_fers = following_df[
+    following_df['username'].isin(follower_df['username'])
 ]
 
 
-print(
-    "\n".join(
-        f"{r.username} | {r.link}\n - does not follow you back\n"
-        for r in compared_df.itertuples()
+def non_fers():
+    print(
+        "\n".join(
+            f"{r.username} | {r.link}\n - does not follow you back\n"
+            for r in found_non.itertuples()
+        )
     )
-)
+
+def fers():
+    print(
+        "\n".join(
+            f"{r.username} | {r.link}\n - follows you back\n"
+            for r in found_fers.itertuples()
+        )
+    )
+
+def menu():
+    select = {
+        "1": ("Followers List", fers),
+        "2": ("Non Followers List", non_fers)
+    }
+
+    print(f"|Follow Analyzer|")
+    print("\n".join(
+        f"| {key}. {label}"
+        for key, (label, func) in select.items()
+        )
+    )
+    choice = input("Choose: ")
+    if choice in select:
+        action = select[choice][1]
+    else:
+        action = lambda: print("Invalid option")
+    action()
+
+menu()
